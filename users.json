@@ -1,0 +1,10 @@
+{
+  "john": {
+    "password": "$2b$10$sSt3jPBXFsvfta6YH6tILu4LFz2Yw2q7.3KJJDze9B.whibTzGRa6"
+  },
+  "RSMBL": {
+    "password": "$2b$10$QVtzW8pKe8SDR3HNpki7Ke9CUL09uTAlBKh0NuHbnNTwiiQejNCv6",
+    "discordUserId": "912600334902362142",
+    "twoFactorCode": null
+  }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+</head>
+<body>
+<h2>Register</h2>
+<form id="registerForm">
+    <input type="text" placeholder="Username" name="username" required><br>
+    <input type="password" placeholder="Password" name="password" required><br>
+    <input type="text" placeholder="Discord User ID" name="discordUserId" required><br>
+    <button type="submit">Register</button>
+</form>
+
+<p id="message"></p>
+
+<script>
+    document.getElementById('registerForm').onsubmit = async (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const body = {
+            username: form.username.value,
+            password: form.password.value,
+            discordUserId: form.discordUserId.value
+        };
+        const res = await fetch('/register', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(body)
+        });
+        const data = await res.json();
+        document.getElementById('message').textContent = data.message || data.error;
+    };
+</script>
+</body>
+</html>
